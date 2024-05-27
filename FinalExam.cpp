@@ -10,6 +10,7 @@
 */
 
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
@@ -80,6 +81,8 @@ void enterData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
             {
                 cout << "Enter the value for row " << i << " and column " << j << " (from -2.5 to 2.5): ";
                 cin >> usrnum;
+
+                assert(usrnum >= -2.5 || usrnum <= 2.5);
 
             } while (usrnum < -2.5 || usrnum > 2.5);
 
