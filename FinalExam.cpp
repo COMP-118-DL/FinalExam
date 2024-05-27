@@ -5,8 +5,8 @@
      \@date          27/05/2024
      \@brief         File contains functions that work with a matrix
      \@description   The file includes functions to enter data for a matrix, sum of all elements, show data in matrix and count the elements of value 1.0
-
-
+     \@copytright    University of Nicosia
+     \@requirement   First initialize the matrix
 
 */
 
