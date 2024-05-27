@@ -1,3 +1,14 @@
+/**
+    
+    \@file      FinalExam.cpp
+    \@name      Daniel Levin
+    \@date      27/05/2024
+    \@brief     The file contains functions that work with a matrix
+    \@details   The functions include initializing the matrix with user defined values, sum of the elements and show the matrix
+
+
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -49,6 +60,14 @@ int main()
     return 0;
 }
 
+/**
+
+    \@brief  The function initializes a matrix with user defined values
+    \@param matrix
+    \@param MAX_ROW
+    \@param MAX_COL
+
+*/
 void enterData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
 {
     double usrnum;
@@ -71,6 +90,14 @@ void enterData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
 
 }
 
+/**
+
+    \@brief  The function sums the elements of the matrix
+    \@param matrix
+    \@param MAX_ROW
+    \@param MAX_COL
+    \@return sum
+*/
 double sumNumbers(double matrix[][3], const int MAX_ROW, const int MAX_COL)
 {
     double sum = 0;
@@ -86,6 +113,14 @@ double sumNumbers(double matrix[][3], const int MAX_ROW, const int MAX_COL)
     return sum;
 }
 
+/**
+
+    \@brief  The function initializes displays the values in the matrix
+    \@param matrix
+    \@param MAX_ROW
+    \@param MAX_COL
+
+*/
 void showData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
 {
     for (int i = 0; i < MAX_ROW; i++)
