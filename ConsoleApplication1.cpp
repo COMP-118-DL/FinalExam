@@ -14,15 +14,15 @@ int main()
 
     int usrChoice;
 
-    double matrix[4][3];
+    double matrix[MAX_ROW][MAX_COL];
     
 
     do 
-    {
-        cout << "1) Enter data in matrix (range -2.5 to 2.5)" << endl;
+    {   
+        cout << "\n1) Enter data in matrix (range -2.5 to 2.5)" << endl;
         cout << "2) Sum of all numbers" << endl;
         cout << "3) Show data in matrix" << endl;
-        cout << "3) Exit" << endl;
+        cout << "4) Exit" << endl;
 
         cout << "\nPlease enter choice: ";
         cin >> usrChoice;
@@ -33,7 +33,7 @@ int main()
             enterData(matrix, MAX_ROW ,MAX_COL);
             break;
         case 2:
-            sumNumbers(matrix, MAX_ROW, MAX_COL);
+            cout << "The sum of the numbers in the matrix is: " << sumNumbers(matrix, MAX_ROW, MAX_COL) << endl;
             break;
         case 3:
             showData(matrix, MAX_ROW, MAX_COL);
@@ -49,3 +49,51 @@ int main()
     return 0;
 }
 
+void enterData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
+{
+    double usrnum;
+
+    for (int i = 0; i < MAX_ROW; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            do
+            {
+                cout << "Enter the value for row " << i << " and column " << j << " (from -2.5 to 2.5): ";
+                cin >> usrnum;
+
+            } while (usrnum < -2.5 || usrnum > 2.5);
+
+            matrix[i][j] = usrnum;
+
+        }
+    }
+
+}
+
+double sumNumbers(double matrix[][3], const int MAX_ROW, const int MAX_COL)
+{
+    double sum = 0;
+
+    for (int i = 0; i < MAX_ROW; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            sum += matrix[i][j];
+        }
+    }
+
+    return sum;
+}
+
+void showData(double matrix[][3], const int MAX_ROW, const int MAX_COL)
+{
+    for (int i = 0; i < MAX_ROW; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+        {
+            cout << matrix[i][j] << "   ";
+        }
+        cout << endl;
+    }
+}
