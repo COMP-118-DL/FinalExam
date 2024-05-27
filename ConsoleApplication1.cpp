@@ -1,20 +1,51 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+using namespace std;
+
+void enterData(double matrix[][3], const int MAX_ROW, const int MAX_COL);
+double sumNumbers(double matrix[][3], const int MAX_ROW, const int MAX_COL);
+void showData(double matrix[][3], const int MAX_ROW, const int MAX_COL);
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    const int MAX_ROW = 4;
+    const int MAX_COL = 3;
+
+    int usrChoice;
+
+    double matrix[4][3];
+    
+
+    do 
+    {
+        cout << "1) Enter data in matrix (range -2.5 to 2.5)" << endl;
+        cout << "2) Sum of all numbers" << endl;
+        cout << "3) Show data in matrix" << endl;
+        cout << "3) Exit" << endl;
+
+        cout << "\nPlease enter choice: ";
+        cin >> usrChoice;
+        
+        switch (usrChoice)
+        {
+        case 1:
+            enterData(matrix, MAX_ROW ,MAX_COL);
+            break;
+        case 2:
+            sumNumbers(matrix, MAX_ROW, MAX_COL);
+            break;
+        case 3:
+            showData(matrix, MAX_ROW, MAX_COL);
+        case 4:
+            cout << "Exiting..." << endl;
+            break;
+        default:
+            break;
+        }
+
+    } while (usrChoice != 4);
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
